@@ -27,6 +27,7 @@ jobs:
         paths:  '**/target/surefire-reports/TEST-*.xml'
     - name: Comment test summary
       uses: NejcZdovc/comment-pr@v1
+      if: success() || failure()    # run this step even if previous step failed
       with:
         file: "test-summary.md"
     - name: Test Report
