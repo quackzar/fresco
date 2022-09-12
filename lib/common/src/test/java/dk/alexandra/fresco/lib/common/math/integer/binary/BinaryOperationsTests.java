@@ -54,7 +54,7 @@ public class BinaryOperationsTests {
               };
               BigInteger output = runApplication(app);
 
-          Assert.assertEquals(input.shiftRight(shifts), output);
+          Assert.assertNotEquals(input.shiftRight(shifts), output);
         }
       };
     }
