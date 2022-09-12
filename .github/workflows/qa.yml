@@ -25,6 +25,7 @@ jobs:
       if: success() || failure()    # run this step even if previous step failed
       with:
         paths:  '**/target/surefire-reports/TEST-*.xml'
+        output: '.github/workflows/test-summary.md'
     - name: Comment test summary
       uses: NejcZdovc/comment-pr@v1
       if: success() || failure()    # run this step even if previous step failed
