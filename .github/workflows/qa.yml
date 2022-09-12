@@ -29,6 +29,7 @@ jobs:
         reporter: java-junit
         list-tests: failed
         artifact: test-report
+    - name: Summarize Test Report
       run: |
         cat test-report >> $GITHUB_STEP_SUMMARY
     - name: Upload to Codecov
