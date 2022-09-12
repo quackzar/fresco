@@ -27,6 +27,11 @@ jobs:
         name: JUnit Tests            # Name of the check run which will be created
         path: '**/target/surefire-reports/TEST-*.xml'
         reporter: 'java-junit'
+    - name: Create test summary
+      uses: test-summary/action@dist
+      with:
+        paths:  '**/target/surefire-reports/TEST-*.xml'
+        if: always()
     - name: Upload to Codecov
       uses: codecov/codecov-action@v2
       with:
